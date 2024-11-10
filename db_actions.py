@@ -33,4 +33,5 @@ def delete_post(id):
     with Session() as session:
         post = session.query(Post).filter_by(id=id).first()
         session.delete(post)
+        session.commit()
         return "Стаття видалена"
